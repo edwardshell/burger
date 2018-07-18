@@ -1,0 +1,39 @@
+<div id="main">
+    <img src="/assets/img/sonic-burger.jpg" alt="burger">
+    <h2>Eat-Da-Burger</h2>
+</div>
+
+
+<div id="devourIt">
+
+    <h4>Devour the Burger!</h4>
+
+    <ul>
+        {{#each burger}} {{#unless devoured}} {{> burgers/burger-block devoured=true}} {{/unless}} {{/each}}
+    </ul>
+
+</div>
+
+<div id="clickDevoured">
+    <h4>Burger = Devoured</h4>
+
+    <ul>
+        {{#each burger}} {{#if devoured}} {{> burgers/burger-block devoured=false}} {{/if}} {{/each}}
+    </ul>
+</div>
+<br>
+<br><br>
+<br>
+<br>
+<br>
+<div id="form">
+    <h3>Add a Burger</h3>
+    <form class="create-form">
+        <div class="form-group">
+            <label for="bu">Burger Name:</label>
+            <input type="text" id="bu" name="name">
+        </div>
+        <br>
+        <button type="submit">Add Burger</button>
+    </form>
+</div>
